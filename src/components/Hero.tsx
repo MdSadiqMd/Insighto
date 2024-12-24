@@ -1,22 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+
+import { RainbowButton } from './ui/rainbow-button';
 
 export default function Hero() {
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
             <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center">
-                <div className="md:w-1/2 mb-8 md:mb-0">
+                <div className="md:w-1/2 mb-8 md:mb-0 ml-[5%]">
                     <motion.h1
-                        className="text-5xl md:text-7xl font-bold mb-6"
+                        className="text-2xl md:text-4xl font-bold mb-6"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Collect Feedback,<br />
-                        <span className="text-blue-400">Effortlessly</span>
+                        Collect Feedback, Effortlessly with<br />
+                        <span className="text-blue-400 text-5xl md:text-7xl font-bold">Insighto</span>
                     </motion.h1>
                     <motion.p
                         className="text-xl mb-8 max-w-2xl"
@@ -32,8 +33,7 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
                     >
-                        <Button size="lg" className="mr-4">Get Started</Button>
-                        <Button size="lg" variant="outline">Learn More</Button>
+                        <RainbowButton className="mr-4">Get Started</RainbowButton>
                     </motion.div>
                 </div>
                 <motion.div
@@ -57,7 +57,7 @@ export default function Hero() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-20"></div>
+                <div className="absolute inset-0 bg-[#16161a] opacity-20"></div>
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
             </motion.div>
         </section>
