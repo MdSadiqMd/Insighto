@@ -1,9 +1,17 @@
-const Home = () => {
-    return (
-        <>
-            <h1>Hello World</h1>
-        </>
-    );
-};
+import Hero from '@/components/Hero';
+import Features from '@/components/Features';
+import HowItWorks from '@/components/HowItWorks';
+import Testimonials from '@/components/Testimonials';
+import Footer from '@/components/Footer';
 
-export default Home;
+export default function Home() {
+    return (
+        <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white dark">
+            <Hero />
+            <Features />
+            <HowItWorks />
+            <Testimonials />
+            <Footer />
+        </main>
+    );
+}
