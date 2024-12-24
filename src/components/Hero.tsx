@@ -11,22 +11,22 @@ export default function Hero() {
             <div className="container mx-auto px-4 z-10 flex flex-col md:flex-row items-center">
                 <div className="md:w-1/2 mb-8 md:mb-0 ml-[5%]">
                     <motion.h1
-                        className="text-2xl md:text-4xl font-bold mb-6"
+                        className="text-5xl md:text-7xl text-[#72757e] font-bold mb-6"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Collect Feedback, Effortlessly with<br />
-                        <span className="text-blue-400 text-5xl md:text-7xl font-bold">Insighto</span>
+                        Collect Feedback Effortlessly<br />
+                        with <span className="font-bold text-white">Insighto</span>
                     </motion.h1>
-                    <motion.p
-                        className="text-xl mb-8 max-w-2xl"
+                    {/* <motion.p
+                        className="text-xl text-[#94a1b2] mb-8 max-w-2xl"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.4, duration: 0.8 }}
                     >
-                        Create custom feedback forms in minutes. Integrate anywhere. Analyze insights easily.
-                    </motion.p>
+                        Create, customize, and integrate feedback forms seamlessly.
+                    </motion.p> */}
                     <motion.div
                         className="flex"
                         initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function Hero() {
                 animate={{ scale: 1 }}
                 transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
             >
-                <div className="absolute inset-0 bg-[#16161a] opacity-20"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-gray-200 via-gray-900 to-black opacity-20"></div>
                 <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
             </motion.div>
         </section>
