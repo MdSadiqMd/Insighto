@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { RainbowButton } from './ui/rainbow-button';
+import HyperText from './ui/hyper-text';
 
 export default function Hero() {
     return (
@@ -16,8 +17,8 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        Collect Feedback Effortlessly<br />
-                        with <span className="font-bold text-white">Insighto</span>
+                        Collect Feedback Effortlessly with<br />
+                        <HyperText className='text-5xl md:text-7xl font-bold text-white'>Insighto🚀</HyperText>
                     </motion.h1>
                     {/* <motion.p
                         className="text-xl text-[#94a1b2] mb-8 max-w-2xl"
