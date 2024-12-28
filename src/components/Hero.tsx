@@ -18,7 +18,9 @@ export default function Hero() {
                         transition={{ duration: 0.8 }}
                     >
                         Collect Feedback Effortlessly with<br />
-                        <HyperText className='text-5xl md:text-7xl font-bold text-white'>Insighto🚀</HyperText>
+                        <HyperText className='text-5xl md:text-7xl font-bold text-white'>
+                            Insighto🚀
+                        </HyperText>
                     </motion.h1>
                     {/* <motion.p
                         className="text-xl text-[#94a1b2] mb-8 max-w-2xl"
