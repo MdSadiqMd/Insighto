@@ -15,8 +15,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FormData } from "@/types/signin.types";
+import { useToast } from "@/hooks/use-toast";
 
 const LoginPage = () => {
+    const { toast } = useToast();
     const [formData, setFormData] = useState<FormData>({
         email: "",
         password: "",
@@ -31,17 +33,33 @@ const LoginPage = () => {
     };
 
     const handleLogin = async () => {
-        if (formData.email == "" || formData.password == "") return;
-        const response = await axios.post("/api/auth/signIn", {
-            email: formData.email,
-            password: formData.password,
-        }).catch((err) => {
-            console.log(err);
-        });
+        if (formData.email === "" || formData.password === "") {
+            toast({
+                variant: "destructive",
+                title: "Error",
+                description: "Please fill in all fields",
+            });
+            return;
+        }
 
-        if (response && response.data.ok) {
+        try {
+            const response = await axios.post("/api/auth/signIn", {
+                email: formData.email,
+                password: formData.password,
+            });
             localStorage.setItem("authToken", response.data.authToken);
             localStorage.setItem("refreshToken", response.data.refreshToken);
+            toast({
+                variant: "default",
+                title: "Success",
+                description: "Logged in successfully",
+            });
+        } catch (error) {
+            toast({
+                variant: "destructive",
+                title: "Error",
+                description: "An error occurred while logging in, Please try again",
+            });
         }
     };
 
