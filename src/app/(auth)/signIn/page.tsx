@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 
 import { Button } from "@/components/ui/button";
