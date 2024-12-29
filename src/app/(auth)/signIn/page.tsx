@@ -54,12 +54,20 @@ const LoginPage = () => {
                 title: "Success",
                 description: "Logged in successfully",
             });
-        } catch (error) {
-            toast({
-                variant: "destructive",
-                title: "Error",
-                description: "An error occurred while logging in, Please try again",
-            });
+        } catch (error: any) {
+            if (error.response && error.response.status === 404) {
+                toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: "User not found. Please sign up first.",
+                });
+            } else {
+                toast({
+                    variant: "destructive",
+                    title: "Error",
+                    description: "An error occurred while logging in. Please try again.",
+                });
+            }
         }
     };
 

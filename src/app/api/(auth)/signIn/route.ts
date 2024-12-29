@@ -16,7 +16,9 @@ export async function POST(req: Request) {
             password: true
         }
     });
-    if (!user || user.password !== password) return new Response("User not found", { status: 404 });
+    if (!user || user.password !== password) {
+        return new Response("User not found", { status: 404 });
+    };
 
     return new Response("User found", { status: 200 });
 }
