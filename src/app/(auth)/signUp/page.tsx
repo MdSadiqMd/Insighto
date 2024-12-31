@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -19,6 +20,7 @@ import { useToast } from "@/hooks/use-toast";
 
 const SignUpPage = () => {
     const { toast } = useToast();
+    const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -50,6 +52,7 @@ const SignUpPage = () => {
             });
             localStorage.setItem("authToken", response.data.authToken);
             localStorage.setItem("refreshToken", response.data.refreshToken);
+            router.push("/");
             toast({
                 variant: "default",
                 title: "Success",
