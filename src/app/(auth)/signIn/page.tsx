@@ -45,7 +45,7 @@ const LoginPage = () => {
         }
 
         try {
-            const response = await axios.post("/api/auth/signIn", {
+            const response = await axios.post("/api/auth/signin", {
                 email: formData.email,
                 password: formData.password,
             });
