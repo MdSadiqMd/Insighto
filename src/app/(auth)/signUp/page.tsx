@@ -14,11 +14,12 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { FormData } from "@/types/signup.types";
 import { useToast } from "@/hooks/use-toast";
 
 const SignUpPage = () => {
     const { toast } = useToast();
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
         password: "",
@@ -115,7 +116,7 @@ const SignUpPage = () => {
                 <div className="mt-4 text-center text-sm">
                     Already have an account?{" "}
                     <Link href="/signIn" className="underline">
-                       Login
+                        Login
                     </Link>
                 </div>
             </CardContent>
